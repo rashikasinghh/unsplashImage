@@ -1,0 +1,12 @@
+<div class="ui container">
+  <div class="ui segment">
+  <form [formGroup]='allPhotos' (ngSubmit)='onClick()' class="ui form">
+    <div class="field">
+    <input type="text"  placeholder="Things to be search" formControlName='search' class="form-control">
+    <button type="submit" class="btn btn-success">search</button>
+  </div>
+</form>
+<div *ngFor="let value of responseArray">
+  <a routerLink='/artist' [queryParams]="{collection: value.user.links.photos}"><img [src]="value.urls.thumb"></a>
+</div>
+</div>
