@@ -11,7 +11,7 @@ export class PhotosService {
 
 getPhotos(value): Observable<any> {
 // tslint:disable-next-line: max-line-length
-  const url = `https://api.unsplash.com/search/photos?client_id=4ff0416f7fe636a641de34cb035f8dc5cc6a3217f1ec45d761b0f52073f2f6d2&query=${value}`
+  const url = `https://api.unsplash.com/search/photos?client_id=4ff0416f7fe636a641de34cb035f8dc5cc6a3217f1ec45d761b0f52073f2f6d2&query=${value}&per_page=30`;
   return this._http.get(url);
 }
 
