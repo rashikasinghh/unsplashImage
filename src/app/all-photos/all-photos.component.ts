@@ -24,7 +24,6 @@ export class AllPhotosComponent implements OnInit {
     this.service.getPhotos(form.search)
     .subscribe(response => {
       this.responseArray = response.results;
-      console.log(this.responseArray);
     });
 
   }

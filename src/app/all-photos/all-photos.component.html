@@ -1,12 +1,31 @@
-<div class="ui container">
-  <div class="ui segment">
-  <form [formGroup]='allPhotos' (ngSubmit)='onClick()' class="ui form">
-    <div class="field">
-    <input type="text"  placeholder="Things to be search" formControlName='search' class="form-control">
-    <button type="submit" class="btn btn-success">search</button>
-  </div>
-</form>
-<div *ngFor="let value of responseArray">
-  <a routerLink='/artist' [queryParams]="{collection: value.user.links.photos}"><img [src]="value.urls.thumb"></a>
+<div class="container">
+  <div class="card">
+      <div class="card-body">
+          <b>Good to go!</b>
+        </div>
+        <form [formGroup]='allPhotos' (ngSubmit)='onClick()' class="ui form">
+          <input type="text" placeholder="Things to be search" formControlName='search' class="form-control">
+        </form>
+      </div>
+      <br>
+      <div *ngIf='responseArray.length > 0' class="card">
+        <div class="image-container" id="image-grid"> 
+          <div *ngFor="let value of responseArray">
+            <div class="container1">
+              <img class="image" style="width:100%" [src]="value.urls.thumb">
+              <div class="middle">
+                  <div class="text">
+                    <div>
+                      <a routerLink='/artist' [queryParams]="{collection: value.user.links.photos}">
+                      {{value.user.name}}</a>
+                    </div>
+                      <i class="material-icons">favorite</i>{{value.likes}}
+                  </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
 </div>
-</div>
+
+    

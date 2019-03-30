@@ -1,6 +1,16 @@
-<div *ngFor="let values of artistArray">
-  <img [src]="values.urls.thumb">
+<div class="container">
+  <div class="card">
+      <div class="card-body">
+          <b>Here comes the Artist!</b>
+        </div>
+  <div class="image-container" id="image-grid">
+  <div *ngFor="let values of artistArray">
+  <img [src]="values.urls.thumb" class="image" style="width:100%">
 </div>
-<div>
-  <button routerLink="/" class="btn btn-primary">--BACK</button>
+</div>
+</div>
+<br>
+<div style="text-align:center">
+    <button routerLink="/" class="btn btn-success"> BACK </button>
+</div>
 </div>
