@@ -12,7 +12,7 @@ export class AllPhotosComponent implements OnInit {
   allPhotos = new FormGroup({
     search: new FormControl('')
   });
-  responseArray: [];
+  responseArray = [];
   constructor(private service: PhotosService ) { }
 
 
